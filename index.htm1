@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free AI Video Studio</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #101323;
+  color: white;
+  text-align: center;
+  padding: 30px 15px;
+}
+.container {
+  max-width: 700px;
+  margin: 40px auto;
+  background: #1c2238;
+  padding: 30px;
+  border-radius: 20px;
+}
+h1 { color: #7cf7c4; }
+p { line-height: 1.6; }
+input, button {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 14px;
+  margin-top: 12px;
+  border-radius: 10px;
+  font-size: 16px;
+}
+input { border: 1px solid #777; }
+button {
+  background: #70f0ba;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+.note { color: #c4c9d8; font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>🎬 Free AI Video Studio</h1>
+  <p>Create a new video workflow from a YouTube video idea.</p>
+  <input id="videoUrl" type="url"
+    placeholder="Paste a YouTube video link">
+  <button onclick="analyze()">Start Creating</button>
+  <div id="result"></div>
+  <p class="note">
+    Free local-first video studio. No subscription required.
+  </p>
+</div>
+<script>
+function analyze() {
+  const url = document.getElementById("videoUrl").value.trim();
+  const result = document.getElementById("result");
+
+  if (!url || !url.includes("youtube.com") && !url.includes("youtu.be")) {
+    result.innerHTML = "<p>Please enter a valid YouTube link.</p>";
+    return;
+  }
+
+  result.innerHTML =
+    "<p>Link received! The next step is to add video analysis, " +
+    "original script generation, voiceover, and video export.</p>";
+}
+</script>
+</body>
+</html>
